@@ -3,13 +3,16 @@ Faça um programa que receba duas notas digitadas pelo usuário. Se a nota for m
 '''
 def lerNota():
     nota = input("Digite sua nota:")
-    return nota
+    return float(nota)
 
-def mensagemAprovado(nota):
-    if int(nota) >= 6:
+def mensagemAprovado(notaA, notaB):
+    media = (notaA + notaB) / 2
+    print("Sua média é %f" %media)
+    if float(media) >= 6:
         return "Aprovado."
     else:
         return "Reprovado."
+notaA = lerNota()
+notaB = lerNota()
 
-print(mensagemAprovado(lerNota()))
-print(mensagemAprovado(lerNota()))
+print(mensagemAprovado(notaA, notaB))
