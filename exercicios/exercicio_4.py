@@ -8,18 +8,22 @@ for i in range(0, 3):
     valor = input("Digite um número:")
     lista.append(valor)
 
-def selection_sort(lista):
+def selection_sort(l):
     
-    for i in range(len(lista)):
+    for i in range(len(l)):
         menor = i
         for j in range(i + 1, len(lista)):
-            if lista[j] < lista[menor]:
+            if l[j] < l[menor]:
                 menor = j
-        if lista[i] != lista[menor]:
-            aux = lista[i]
-            lista[i] = lista[menor]
-            lista[menor] = aux
+        if l[i] != l[menor]:
+            aux = l[i]
+            l[i] = l[menor]
+            l[menor] = aux
+    return l
+
+print('lista = ', lista)
+print('lista ordenada = ',selection_sort(lista))
 
 
-lista.sort()
-print(lista)
+listaOrdenada = lista.sort()
+print(listaOrdenada)
